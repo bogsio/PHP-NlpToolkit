@@ -1,6 +1,9 @@
 <?php
 namespace NlpToolkit;
 
+/**
+ * Thanks to: http://phpir.com/part-of-speech-tagging
+ */
 class BrillTagger implements ITagger{
 	private $dict;
 	
