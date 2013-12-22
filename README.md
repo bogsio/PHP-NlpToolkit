@@ -5,7 +5,7 @@ PHP-NlpToolkit is a small toolkit for processing textual data. It provides commo
 
 ```PHP
 $text = new Text(" You can do a lot of interesting stuff with this toolkit. 
-You can tokenize text, split into sentences and tag words . ");
+You can tokenize text, split ito sentences and tag words . ");
 
 print_r($text->sentences());
 
@@ -14,6 +14,9 @@ $tok = $text->sentences()[0][0];
 echo $tok;
 echo $tok->tag();
 echo $tok->word();
+
+$tok = $text->sentences()[1][6];
+print_r($tok->suggest()); // ito
 
 ```
 
@@ -228,6 +231,8 @@ You/PRP
 PRP
 
 You
+
+Array ( [0] => Array ( [word] => to [confidence] => 0.66575634141826 ) [1] => Array ( [word] => it [confidence] => 0.24719959266802 ) [2] => Array ( [word] => into [confidence] => 0.049157563414183 ) [3] => Array ( [word] => its [confidence] => 0.037840214775042 ) [4] => Array ( [word] => iso [confidence] => 4.6287724495464E-5 ) ) 
 
 ```
 
