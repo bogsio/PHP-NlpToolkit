@@ -10,8 +10,8 @@ class BrillTagger implements ITagger{
 	public function __construct($lexicon) {
 		$fh = fopen($lexicon, 'r');
 		while($line = fgets($fh)) {
-				$tags = explode(' ', $line);
-				$this->dict[trim(strtolower(array_shift($tags)))] = $tags;
+			$tags = explode(' ', $line);
+			$this->dict[trim(strtolower(array_shift($tags)))] = $tags;
 		}
 		fclose($fh);
 	}
@@ -44,7 +44,7 @@ class BrillTagger implements ITagger{
 				$return[$i]['tag'] = 'CD';
 			}
 			
-			// Convert noun to past particile if ends with 'ed'
+			// Convert noun to past participle if ends with 'ed'
 			if($return[$i]['tag'][0] == 'N' && substr($token, -2) == 'ed') {
 				$return[$i]['tag'] = 'VBN';
 			}
