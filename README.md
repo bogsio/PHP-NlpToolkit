@@ -7,9 +7,9 @@ PHP-NlpToolkit is a small toolkit for processing textual data. It provides commo
 $text = new Text(" You can do a lot of interesting stuff with this toolkit. 
 You can tokenize text, split into sentences and tag words . ");
 
-print_r($text->getSentences());
+print_r($text->sentences());
 
-$tok = $text->getSentences()[0][0];
+$tok = $text->sentences()[0][0];
 
 echo $tok;
 echo $tok->tag();
@@ -237,3 +237,4 @@ Features
 - Tokenization (splitting text into words)
 - Segmentation (splitting text into sentences)
 - PartOfSpeech Tagging
+- Spellchecker
